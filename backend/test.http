@@ -1,4 +1,4 @@
-GET http://localhost:2000/notes
+POST  http://localhost:2000/notes
 
 
 {
