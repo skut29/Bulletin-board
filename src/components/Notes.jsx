@@ -1,19 +1,24 @@
 import React from 'react'
 import Draggable from 'react-draggable';
+// import notesData from '../data';
 
-function Notes() {
+function Notes({ notes }) {
+    
     return (
-        <Draggable>
-            <div className="note">
-                <header>
-                    <button className="btn-move"></button>
-                    <button className="btn-edit"></button>
-                    <button className="btn-delete"></button>
-                </header>
-                <main>Notes will be shown here.</main>
-                <main>Notes will be shown here.</main>
-            </div>
+        <>
+       {notes.map(note => (
+           <Draggable>
+                <div className="note" key={note.id}>
+                    <header>
+                        <button className="btn-red"></button>
+                        <button className="btn-yellow"></button>
+                        <button className="btn-green"></button>
+                    </header>
+                    <textarea>{note.text}</textarea>
+                </div>
         </Draggable>
+        ))}
+        </>
     )
 }
 

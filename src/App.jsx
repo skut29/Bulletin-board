@@ -1,21 +1,28 @@
 import React, { useState } from 'react'
 import Notes from "./components/Notes"
+import { v4 as uuidv4 } from 'uuid';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [notes, setNotes] = useState([])
 
+    const addNote = () => {
+      const newNote = {
+        id: uuidv4(),
+        text: ''
+      }
+      const newNotes = [...notes, newNote]
+      setNotes(newNotes)
+}
+    console.log(notes)
   return (
     <div className="App">
       <header>
         <h1>Bulletin Board</h1>
-        <p>login</p>{/* chhanges to text input when logged in */}
+        <h2 className="new-note" onClick={addNote}>newNote++</h2>
       </header>
       <main>
-        <Notes />
-        <Notes />
-        <Notes />
-        <Notes />
+        <Notes notes={notes}/>
       </main>
     </div>
   )
