@@ -3,5 +3,4 @@ POST  http://localhost:2000/notes
 
 {
     "note": "sample",
-
 }
